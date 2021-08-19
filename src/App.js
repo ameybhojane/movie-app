@@ -3,9 +3,19 @@ import logo from "./logo.svg";
 import "./bootstrap.min.css";
 import "./App.css";
 import React, { useState ,useEffect} from "react";
-import MovieList from "./components/Movielist";
+// import MovieList from "./components/Movielist";
 
-
+const MovieList = (props)=>{
+  return (
+  props.movies.map((movie,index)=>{
+      return (
+          <div className="rowse" >
+          <img src={movie.Poster} alt="imageof movie" height="475" width="300" ></img>
+          </div>
+      )
+  })
+  )
+}
 function App() {
   const [movies, setMovies] = useState([])
   const [searchValue,setsearchValue]= useState("twilight")
